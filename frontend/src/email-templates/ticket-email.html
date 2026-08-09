@@ -1,0 +1,165 @@
+<!-- src/email-templates/ticket-email.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyDummy Ticket</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .header {
+      background: #003366;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .header p {
+      margin: 5px 0 0;
+      opacity: 0.9;
+    }
+    .content {
+      padding: 30px;
+    }
+    .details {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+    .detail-label {
+      font-weight: bold;
+      color: #666;
+    }
+    .detail-value {
+      color: #003366;
+      font-weight: 500;
+    }
+    .footer {
+      background: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      border-top: 1px solid #e9ecef;
+    }
+    .footer a {
+      color: #003366;
+      text-decoration: none;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #003366;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      margin: 10px 0;
+    }
+    .disclaimer {
+      background: #fff3cd;
+      padding: 12px;
+      border-radius: 6px;
+      margin: 20px 0;
+      font-size: 13px;
+      color: #856404;
+    }
+    .disclaimer i {
+      font-style: normal;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>✈️ SkyDummy</h1>
+      <p>Visa-Ready Dummy Ticket</p>
+    </div>
+    
+    <div class="content">
+      <p>Dear <strong>{{passenger_name}}</strong>,</p>
+      
+      <p>Your dummy ticket has been generated successfully for visa application purposes.</p>
+      
+      <div class="details">
+        <div class="detail-row">
+          <span class="detail-label">Booking Reference:</span>
+          <span class="detail-value">{{booking_reference}}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Ticket Number:</span>
+          <span class="detail-value">{{ticket_number}}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Passenger:</span>
+          <span class="detail-value">{{passenger_name}}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">From:</span>
+          <span class="detail-value">{{departure}}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">To:</span>
+          <span class="detail-value">{{destination}}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Departure Date:</span>
+          <span class="detail-value">{{depart_date}}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Total Price:</span>
+          <span class="detail-value">{{total_price}}</span>
+        </div>
+      </div>
+      
+      <div class="disclaimer">
+        <i>ℹ️</i> This is a dummy ticket for visa application purposes only. 
+        No actual flight has been booked.
+      </div>
+      
+      <p style="text-align: center;">
+        <a href="#" class="button">Download Your Ticket</a>
+      </p>
+      
+      <p>If you have any questions, please contact us at 
+        <a href="mailto:support@skydummy.com" style="color: #003366;">support@skydummy.com</a>
+      </p>
+    </div>
+    
+    <div class="footer">
+      <p>© 2024 SkyDummy. All rights reserved.</p>
+      <p>
+        <a href="mailto:support@skydummy.com">support@skydummy.com</a> • 
+        <a href="https://www.skydummy.com">www.skydummy.com</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
